@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6th Monthsary Love Letter</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            color: #ff4081;
+            text-align: center;
+        }
+        .letter {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        .photo {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .photo img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 2;
+            position: relative;
+        }
+        button:hover {
+            background: #d63384;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6699;
+            font-size: 24px;
+            animation: float 6s linear infinite;
+            opacity: 0.7;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+
+    <div class="letter">
+        <h1>Happy 6th Monthsary, My Love 💌</h1>
+        <p>My love,</p>
+        <p>Six months ago, we started a journey that I will forever be thankful for. Being in a long-distance relationship hasn’t been easy, but every challenge we’ve faced only made us stronger and brought us closer. Each day with you, even from miles away, fills my heart with happiness and purpose.</p>
+        <p>I cherish every message, every video call, every laugh, and even the tears we've shared. You've become my peace, my partner, my home. And as we count down the days until we're together again, I just want you to know—I will always choose you, love you, and wait for you.</p>
+        <p>I’m so proud of us. Here's to our 6 months, and to many, many more. I love you with all my heart.</p>
+        <p>With all my love,</p>
+        <p>Flori</p>
+
+        <!-- Optional Photo -->
+        <div class="photo">
+            <img src="your-photo.jpg" alt="Us together (optional)">
+        </div>
+    </div>
+
+    <button onclick="location.href='index.html'">Back to Home</button>
+    <iframe src="music.html" width="200" height="80" style="border:none; position: fixed; bottom: 10px; right: 10px;"></iframe>
+</body>
+</html>

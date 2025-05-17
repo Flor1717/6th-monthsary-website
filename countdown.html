@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown to Our Forever</title>
+    <style>
+        body {
+            background-color: #d1e7ff;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 60%;
+        }
+        h1 {
+            color: #0077b6;
+            font-size: 2.5rem;
+        }
+        #countdown {
+            font-size: 2rem;
+            color: #ff4081;
+            margin: 20px 0;
+        }
+        .message {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        button {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown to Our Forever 💞</h1>
+        <div id="countdown">Loading...</div>
+        <p class="message">Just a little more time, and I’ll be in your arms again — on July 3, 2025. I can't wait! 💖</p>
+        <button onclick="location.href='index.html'">Back to Home</button>
+    </div>
+
+    <script>
+        var eventDate = new Date("July 3, 2025 00:00:00").getTime();
+        var countdown = document.getElementById("countdown");
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = eventDate - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdown.innerHTML = "You're here! 💖";
+            } else {
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            }
+        }, 1000);
+    </script>
+
+    <iframe src="music.html" width="200" height="80" style="border:none; position: fixed; bottom: 10px; right: 10px;"></iframe>
+</body>
+</html>
