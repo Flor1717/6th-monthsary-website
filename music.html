@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Music</title>
+  <meta charset="UTF-8">
+  <title>Background Music</title>
 </head>
 <body>
-  <audio id="bg-music" loop>
+  <audio id="bg-music" autoplay loop>
     <source src="valentines_day.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
@@ -13,25 +13,18 @@
   <script>
     const music = document.getElementById("bg-music");
 
-    // Resume from last time
+    // Restore music time
     const savedTime = localStorage.getItem("musicTime");
-    if (savedTime) {
-      music.currentTime = parseFloat(savedTime);
-    }
+    if (savedTime) music.currentTime = parseFloat(savedTime);
 
-    // Try autoplay, fallback on click
     const tryPlay = () => {
-      music.play().then(() => {
-        console.log("Music playing");
-      }).catch(() => {
-        document.body.addEventListener("click", () => {
-          music.play();
-        }, { once: true });
-        console.log("Autoplay blocked, will play on click.");
+      music.play().catch(() => {
+        document.body.addEventListener("click", () => music.play(), { once: true });
       });
     };
 
     window.addEventListener("load", tryPlay);
+
     window.addEventListener("beforeunload", () => {
       localStorage.setItem("musicTime", music.currentTime);
     });
