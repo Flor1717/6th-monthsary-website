@@ -2,39 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy 6th Monthsary</title>
   <style>
     body {
-      text-align: center;
+      margin: 0;
       background-color: #ffe6f2;
       font-family: 'Arial', sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 20px;
     }
+
     .container {
       background: white;
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
       text-align: center;
-      width: 50%;
       animation: fadeIn 1.5s ease-in-out;
     }
+
     h1 {
       color: #ff4081;
-      font-size: 3rem;
+      font-size: 2.5rem;
       animation: textGlow 2s infinite alternate;
     }
+
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #d63384;
-      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 20px;
     }
+
     button {
       background: #ff4081;
       color: white;
@@ -45,19 +50,27 @@
       font-size: 1rem;
       margin: 10px;
       transition: background 0.3s, transform 0.2s;
-      animation: fadeIn 2s ease-in-out;
     }
+
     button:hover {
       background: #d63384;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
+
     @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
+      from {opacity: 0; transform: scale(0.95);}
       to {opacity: 1; transform: scale(1);}
     }
+
     @keyframes textGlow {
       from {text-shadow: 0 0 10px #ff4081;}
       to {text-shadow: 0 0 20px #ff99cc;}
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      button { width: 100%; }
     }
   </style>
 </head>
@@ -65,8 +78,11 @@
   <div class="container">
     <h1>Happy 6th Monthsary, My Love! 💕</h1>
     <p>Let’s celebrate our 6 beautiful months together:</p>
-    <button onclick="location.href='countdown.html'">Countdown to Our Forever 📅</button>
+  
+    <button onclick="location.href='countdown.html'">📅 Countdown</button>
+  
   </div>
-  <iframe src="music.html" width="1" height="1" style="border:none; position: fixed; bottom: 0; right: 0;"></iframe>
+
+  <iframe src="music.html" width="1" height="1" style="border:none; position:fixed; bottom:0; right:0;"></iframe>
 </body>
 </html>
